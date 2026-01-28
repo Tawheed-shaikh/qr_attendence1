@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>All Teachers</h2>
+
+{% if teachers %}
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+    </tr>
+
+    {% for t in teachers %}
+    <tr>
+        <td>{{ t.id }}</td>
+        <td>{{ t.name }}</td>
+        <td>{{ t.username }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No teachers found.</p>
+{% endif %}
+
+<br>
+<a href="/admin/dashboard">
+    <button style="background:gray;">Back</button>
+</a>
+{% endblock %}

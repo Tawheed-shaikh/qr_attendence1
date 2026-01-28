@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Attendance Marked Successfully</h2>
+
+<p>Student: <strong>{{ student.name }}</strong></p>
+<p>Roll Number: <strong>{{ student.roll_number }}</strong></p>
+<p>Course: <strong>{{ class_session.course }}</strong></p>
+<p>Batch: <strong>{{ class_session.batch }}</strong></p>
+
+<!-- <script>
+    alert("Attendance Marked Successfully!");
+</script> -->
+<h2>Attendance Marked Successfully ✅</h2>
+
+<p>Student: <strong>{{ student.name }}</strong></p>
+<p>Roll Number: <strong>{{ student.roll_no }}</strong></p>
+<p>Course: <strong>{{ class_session.course }}</strong></p>
+
+
+<p>If you see this text, page loaded.</p>
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>All Students</h2>
+
+{% if students %}
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+    <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Year</th>
+        <th>Action</th>
+    </tr>
+
+    {% for s in students %}
+    <tr>
+        <td>{{ s.roll_no }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.course }}</td>
+        <td>{{ s.year }}</td>
+        <td>
+            <a href="/admin/delete_student/{{ s.id }}"
+               onclick="return confirm('Delete this student?');">
+                <button style="background:red;">Delete</button>
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No students found.</p>
+{% endif %}
+
+<br>
+<a href="/admin/dashboard">
+    <button style="background:gray;">Back</button>
+</a>
+{% endblock %}
